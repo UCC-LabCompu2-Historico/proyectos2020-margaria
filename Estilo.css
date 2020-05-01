@@ -1,5 +1,31 @@
-body{
+#cabecera{
     text-align: center;
     color: aliceblue;
+    font-family: 'Amatic SC', cursive;
+}
+
+#cabecera{
+    background: #ff637d;
+}
+#Sector1{
+    background: #eaf2e3;
+    bottom: 65%;
+    right: 78%;
+    width: 50vw;
+    height:35vh;
+
+}
+#Imagen1{
+    position: fixed;
+    bottom: 62%;
+    right: 77%;
+    width: 400px;
+    height:250px;
+    background-color: white;
+}
+
+#Subtitulo1{
+    text-align: center;
+    color: black;
     font-family: 'Amatic SC', cursive;
 }
