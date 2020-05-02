@@ -7,12 +7,25 @@
 #cabecera{
     background: #ff637d;
 }
+
+#primeralinea{
+
+}
+
 #division1{
-    background: #eaf2e3;
+    background: #F4F1BB;
     bottom: 65%;
     right: 78%;
-    width: 50vw;
+    width: 49vw;
     height:35vh;
+    float: left;
+}
+
+#division2{
+    background: #eaf2e3;
+    width: 49vw;
+    height:35vh;
+    float:right;
 }
 
 #Imagen1{
@@ -22,8 +35,15 @@
     width: 400px;
     height:250px;
 }
+.subtitulo2{
+    position: fixed;
+    bottom: 80%;
+    right:40%;
+    color: black;
+    font-family: 'Amatic SC', cursive;
+}
 
-#Subtitulo1{
+.subtitulo1{
     position: fixed;
     bottom: 80%;
     right: 68%;
@@ -39,4 +59,12 @@
     font-family: 'Amatic SC', cursive;
     padding: 20px;
     font-size: 20px;
+}
+
+#ejercicios{
+    font-size: 20px;
+    font-family: 'Amatic SC', cursive;
+    position: absolute;
+    bottom: 72%;
+    right: 29%;
 }
