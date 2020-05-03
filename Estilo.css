@@ -38,7 +38,7 @@
 .subtitulo2{
     position: fixed;
     bottom: 80%;
-    right:40%;
+    right:42%;
     color: black;
     font-family: 'Amatic SC', cursive;
 }
@@ -65,6 +65,14 @@
     font-size: 20px;
     font-family: 'Amatic SC', cursive;
     position: absolute;
-    bottom: 72%;
-    right: 29%;
+    bottom: 62%;
+    right: 31%;
+}
+
+#video{
+    position: absolute;
+    bottom: 62%;
+    right: 6%;
+    width: 400px;
+    height:250px;
 }
