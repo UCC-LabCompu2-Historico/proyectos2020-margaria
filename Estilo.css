@@ -29,6 +29,13 @@
     float: left;
 }
 
+#division4{
+    background: #eaf2e3;
+    width: 65vw;
+    height:350px;
+    float: left;
+}
+
 #Imagen1{
     position: absolute;
     bottom: 62%;
@@ -50,6 +57,12 @@
 }
 
 .Tipo{
+    position: absolute;
+    color: rgba(6,6,6,0.83);
+    font-family: 'Amatic SC', cursive;
+}
+
+.Tipo_Listas{
     color: rgba(6,6,6,0.83);
     font-family: 'Amatic SC', cursive;
 }
@@ -73,8 +86,8 @@
 
 #pos_ejer{
     position: absolute;
-    bottom: 70%;
-    right: 31%;
+    bottom: 66%;
+    right: 34%;
 }
 
 #pos_sir{
@@ -129,9 +142,13 @@
     padding: 20px;
 }
 
-#division4{
-    background: aqua;
-    width: 943px;
-    height:35vh;
-    float: left;
+#pos_imp{
+    bottom: 12%;
+    right:61%;
+}
+
+#lista{
+    position: absolute;
+    bottom: -8%;
+    right:50%;
 }
