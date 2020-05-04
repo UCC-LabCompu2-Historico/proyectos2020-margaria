@@ -50,7 +50,6 @@
 }
 
 .Tipo{
-    position: absolute;
     color: rgba(6,6,6,0.83);
     font-family: 'Amatic SC', cursive;
 }
@@ -73,8 +72,8 @@
 }
 
 #pos_ejer{
-    font-size: 20px;
-    bottom: 62%;
+    position: absolute;
+    bottom: 70%;
     right: 31%;
 }
 
@@ -128,4 +127,11 @@
     bottom:-45%;
     right: 24%;
     padding: 20px;
+}
+
+#division4{
+    background: aqua;
+    width: 943px;
+    height:35vh;
+    float: left;
 }
