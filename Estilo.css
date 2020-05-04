@@ -44,12 +44,24 @@
     width: 400px;
     height:250px;
 }
+.img{
+    border: 2px dashed #ff637d ;
+    padding: 20px;
+}
 
 .Tipo{
     position: absolute;
     color: rgba(6,6,6,0.83);
     font-family: 'Amatic SC', cursive;
 }
+
+.epigrafe{
+    position: absolute;
+    color: rgba(6,6,6,0.83);
+    font-family: 'Amatic SC', cursive;
+    padding: 15px;
+}
+
 #Pos_sub1{
     bottom: 80%;
     right: 68%;
@@ -76,7 +88,32 @@
 
 #pos_habitos{
     text-align: center;
-    color: rgba(6,6,6,0.83);
+    color: rgba(6, 6, 6, 0.83);
     font-family: 'Amatic SC', cursive;
     font-size: 25px;
+}
+
+#pos_rutina{
+    position: absolute;
+    bottom:34%;
+    right: 67%;
+}
+
+
+#rutina{
+    bottom:-45%;
+    right: 24%;
+    padding: 20px;
+}
+
+#pos_ejercicio{
+    position: absolute;
+    bottom:34%;
+    right: 46%;
+}
+
+#ejercicio{
+    bottom:-45%;
+    right: 24%;
+    padding: 20px;
 }
