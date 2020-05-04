@@ -1,6 +1,6 @@
 #cabecera{
     text-align: center;
-    color: aliceblue;
+    color: white;
     font-family: 'Amatic SC', cursive;
 }
 
@@ -8,65 +8,33 @@
     background: #ff637d;
 }
 
-#primeralinea{
-
-}
-
 #division1{
     background: #F4F1BB;
-    bottom: 65%;
-    right: 78%;
-    width: 49vw;
+    width: 943px;
     height:35vh;
     float: left;
 }
 
 #division2{
     background: #eaf2e3;
-    width: 49vw;
+    width: 943px;
     height:35vh;
     float:right;
 }
 
+#division3 {
+    background: #66D7D1;
+    width: 99vw;
+    height:35vh;
+    float: left;
+}
+
 #Imagen1{
-    position: fixed;
+    position: absolute;
     bottom: 62%;
     right: 77%;
     width: 400px;
     height:250px;
-}
-.subtitulo2{
-    position: fixed;
-    bottom: 80%;
-    right:42%;
-    color: black;
-    font-family: 'Amatic SC', cursive;
-}
-
-.subtitulo1{
-    position: fixed;
-    bottom: 80%;
-    right: 68%;
-    color: black;
-    font-family: 'Amatic SC', cursive;
-}
-
-#paraquesirve{
-    border: 2px dashed #ff637d ;
-    position: absolute;
-    bottom: 63%;
-    right: 51%;
-    font-family: 'Amatic SC', cursive;
-    padding: 20px;
-    font-size: 20px;
-}
-
-#ejercicios{
-    font-size: 20px;
-    font-family: 'Amatic SC', cursive;
-    position: absolute;
-    bottom: 62%;
-    right: 31%;
 }
 
 #video{
@@ -75,4 +43,40 @@
     right: 6%;
     width: 400px;
     height:250px;
+}
+
+.Tipo{
+    position: absolute;
+    color: rgba(6,6,6,0.83);
+    font-family: 'Amatic SC', cursive;
+}
+#Pos_sub1{
+    bottom: 80%;
+    right: 68%;
+}
+
+#Pos_sub2{
+    bottom: 80%;
+    right:42%;
+}
+
+#pos_ejer{
+    font-size: 20px;
+    bottom: 62%;
+    right: 31%;
+}
+
+#pos_sir{
+    border: 2px dashed #ff637d ;
+    bottom: 63%;
+    right: 52%;
+    padding: 20px;
+    font-size: 20px;
+}
+
+#pos_habitos{
+    text-align: center;
+    color: rgba(6,6,6,0.83);
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
 }
