@@ -24,7 +24,7 @@
 
 #division3 {
     background: #66D7D1;
-    width: 99vw;
+    width: 1887px;
     height:35vh;
     float: left;
 }
@@ -34,6 +34,13 @@
     width: 65vw;
     height:350px;
     float: left;
+}
+
+#division5{
+    background: #F4F1BB;
+    width: 33vw;
+    height:350px;
+    float: right;
 }
 
 #Imagen1{
@@ -50,7 +57,9 @@
     right: 6%;
     width: 400px;
     height:250px;
+    border-radius: 15px;
 }
+
 .img{
     border: 2px dashed #ff637d ;
     padding: 20px;
@@ -94,7 +103,7 @@
 #pos_ejer{
     position: absolute;
     bottom: 66%;
-    right: 34%;
+    right: 30%;
 }
 
 #pos_sir{
