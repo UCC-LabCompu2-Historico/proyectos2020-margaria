@@ -14,54 +14,54 @@ body{
 
 #division1{
     background: #F4F1BB;
-    width: 943px;
+    width: 50%;
     height:35vh;
     float: left;
 }
 
 #division2{
     background: #eaf2e3;
-    width: 943px;
+    width: 50%;
     height:35vh;
     float:right;
 }
 
 #division3 {
     background: #66D7D1;
-    width: 1887px;
+    width: 100%;
     height:35vh;
     float: left;
 }
 
 #division4{
     background: #eaf2e3;
-    width: 65vw;
+    width: 65%;
     height:350px;
     float: left;
 }
 
 #division5{
     background: #F4F1BB;
-    width: 33vw;
+    width: 35%;
     height:350px;
     float: right;
 }
 
 #Imagen1{
-    position: absolute;
-    bottom: 62%;
-    right: 82%;
+    margin-left: 10%;
+    margin-top: 4%;
     width: 250px;
-    height:250px;
+    height: 250px;
+    float: left;
 }
 
 #video{
-    position: absolute;
-    bottom: 62%;
-    right: 6%;
-    width: 400px;
-    height:250px;
-    border-radius: 15px;
+    width: 46%;
+    height: 66%;
+    border-radius: 12px;
+    margin-top: -4%;
+    margin-right: 9%;
+    float: right
 }
 .padding{
     padding: 20px;
@@ -69,14 +69,14 @@ body{
 }
 
 .img{
-    width: 100px;
-    height:100px;
-    border: 2px dashed #ff637d ;
+    width: 21%;
+    height: 18%;
+    border: 2px dashed #ff637d;
     padding: 20px;
+    margin-left: 10%
 }
 
 .Tipo{
-    position: absolute;
     color: rgba(6,6,6,0.83);
     font-family: 'Amatic SC', cursive;
 }
@@ -88,10 +88,13 @@ body{
 }
 
 .epigrafe{
-    position: absolute;
     color: rgba(6,6,6,0.83);
     font-family: 'Amatic SC', cursive;
-    padding: 15px;
+    margin-top: 0%;
+    margin-left: 4%;
+    text-align: center;
+    float: left;
+    margin-right: 47%;
 }
 
 .horas{
@@ -101,31 +104,31 @@ body{
 }
 
 #Pos_sub1{
-    bottom: 80%;
-    right: 68%;
+    margin-top: 6%;
+    margin-left: 15%;
+    float: left;
 }
 
 #Pos_sub2{
-    bottom: 80%;
-    right:42%;
+    margin-top: 6%;
+    margin-left: 11%;
 }
 
 #pos_ejer{
-    margin-left: 53%;
-    margin-right: 2%;
-    position: absolute;
-    bottom: 70%;
-    right: 30%;
+    margin-left: 8%;
+    margin-right: 63%;
+    margin-top: 5%;
 }
 
 #pos_sir{
     text-align: center;
-    margin-right: 24%;
-    margin-left: 24%;
-    border: 2px dashed #ff637d ;
-    bottom: 65%;
-    right: 29%;
+    margin-right: 9%;
+    margin-left: 44%;
+    border: 2px dashed #ff637d;
     font-size: 20px;
+    margin-top: 14%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #pos_habitos{
@@ -136,69 +139,60 @@ body{
 }
 
 #pos_rutina{
-    position: absolute;
-    bottom:34%;
-    right: 67%;
+    float: left;
+    width: 14%;
+    margin-left: 32%
 }
 
 
 #rutina{
-    bottom:-45%;
-    right: 24%;
-    padding: 20px;
+    margin-left: 18%;
+    float: left;
 }
 
 #pos_ejercicio{
-    position: absolute;
-    bottom:34%;
-    right: 46%;
+    float: left;
+    width: 14%;
 }
 
-#ejercicio{
-    bottom:-45%;
-    right: 24%;
-    padding: 20px;
+#ejercicio {
+    margin-left: 18%;
+    float: left;
 }
 
 #pos_dormir{
-    position: absolute;
-    bottom:34%;
-    right: 25%;
+    float: left;
+    width: 14%;
 }
 
 #dormir{
-    bottom:-45%;
-    right: 24%;
-    padding: 20px;
+    margin-left: 16%;
+    float: left;
 }
 
 #pos_imp{
-    bottom: 12%;
-    right:61%;
+    text-align: center;
 }
 
 #pos_formulario{
-    bottom: 65%;
-    right: 36%;
+    margin-top: 4%;
+    margin-left: 7%;
 }
 
 #lista{
-    position: absolute;
-    bottom: -8%;
-    right:38%;
+
     margin-left: 21%;
 }
 
 #horarios{
-    text-align:center;
-    bottom: -10%;
-    right:79%;
-    position: absolute;
+    text-align: center;
     color: rgba(6, 6, 6, 0.83);
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
-    padding: 35px;
     margin-left: 2%;
+    float: left;
+    width: 24%;
+    margin-top: 4%;
 }
 #boton_horarios{
     color: rgba(6, 6, 6, 0.83);
