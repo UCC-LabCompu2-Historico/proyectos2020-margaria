@@ -1,3 +1,7 @@
+body{
+    background: white;
+}
+
 #cabecera{
     text-align: center;
     color: white;
@@ -110,7 +114,7 @@
     margin-left: 53%;
     margin-right: 2%;
     position: absolute;
-    bottom: 67%;
+    bottom: 70%;
     right: 30%;
 }
 
@@ -171,6 +175,11 @@
 #pos_imp{
     bottom: 12%;
     right:61%;
+}
+
+#pos_formulario{
+    bottom: 65%;
+    right: 36%;
 }
 
 #lista{
