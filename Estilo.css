@@ -59,8 +59,14 @@
     height:250px;
     border-radius: 15px;
 }
+.padding{
+    padding: 20px;
+    text-align: center;
+}
 
 .img{
+    width: 100px;
+    height:100px;
     border: 2px dashed #ff637d ;
     padding: 20px;
 }
@@ -101,16 +107,20 @@
 }
 
 #pos_ejer{
+    margin-left: 53%;
+    margin-right: 2%;
     position: absolute;
-    bottom: 66%;
+    bottom: 67%;
     right: 30%;
 }
 
 #pos_sir{
+    text-align: center;
+    margin-right: 24%;
+    margin-left: 24%;
     border: 2px dashed #ff637d ;
-    bottom: 63%;
-    right: 52%;
-    padding: 20px;
+    bottom: 65%;
+    right: 29%;
     font-size: 20px;
 }
 
@@ -167,15 +177,19 @@
     position: absolute;
     bottom: -8%;
     right:38%;
+    margin-left: 21%;
 }
 
 #horarios{
-    bottom: -6%;
-    right:82%;
+    text-align:center;
+    bottom: -10%;
+    right:79%;
     position: absolute;
     color: rgba(6, 6, 6, 0.83);
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
+    padding: 35px;
+    margin-left: 2%;
 }
 #boton_horarios{
     color: rgba(6, 6, 6, 0.83);
