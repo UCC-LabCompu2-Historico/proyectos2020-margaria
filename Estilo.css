@@ -165,12 +165,12 @@
 
 #lista{
     position: absolute;
-    bottom: -10%;
+    bottom: -8%;
     right:38%;
 }
 
 #horarios{
-    bottom: -8%;
+    bottom: -6%;
     right:82%;
     position: absolute;
     color: rgba(6, 6, 6, 0.83);
