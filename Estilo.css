@@ -1,3 +1,15 @@
+/* Los styles están dividos
+segun las siguiente regla:
+
+Divisones: Son las divisiones generales de la páginas
+Imagenes-Videos: Tienen su propia ID, menos los de la división 3 que están hechos por clase
+pos_***: Es el estilo que posiciona **** (Generalmente usado por posicionar subtitulos)
+*nombre directo (Ejemplo : #rutina): Son usados para posicionar textos-parrafos-listas
+
+
+Las clases fueron utilizadas mayormente para repetir patrones de estilo.
+*/
+
 body{
     background: white;
 }
@@ -36,14 +48,14 @@ body{
 #division4{
     background: #eaf2e3;
     width: 65%;
-    height:350px;
+    height:30vh;
     float: left;
 }
 
 #division5{
     background: #F4F1BB;
     width: 35%;
-    height:350px;
+    height:30vh;
     float: right;
 }
 
@@ -144,7 +156,6 @@ body{
     margin-left: 32%
 }
 
-
 #rutina{
     margin-left: 18%;
     float: left;
@@ -180,8 +191,9 @@ body{
 }
 
 #lista{
-
-    margin-left: 21%;
+    margin-left: 32%;
+    margin-top: 3%;
+    margin-right: 6%;
 }
 
 #horarios{
@@ -189,10 +201,10 @@ body{
     color: rgba(6, 6, 6, 0.83);
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
-    margin-left: 2%;
+    margin-left: 4%;
     float: left;
     width: 24%;
-    margin-top: 4%;
+    margin-top: 2%;
 }
 #boton_horarios{
     color: rgba(6, 6, 6, 0.83);
