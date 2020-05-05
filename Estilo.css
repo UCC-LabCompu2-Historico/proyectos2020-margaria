@@ -65,6 +65,7 @@
 .Tipo_Listas{
     color: rgba(6,6,6,0.83);
     font-family: 'Amatic SC', cursive;
+    font-size: 20px;
 }
 
 .epigrafe{
@@ -72,6 +73,12 @@
     color: rgba(6,6,6,0.83);
     font-family: 'Amatic SC', cursive;
     padding: 15px;
+}
+
+.horas{
+    padding: 15px;
+    border: 2px dashed #ff637d ;
+    border-radius: 15px;
 }
 
 #Pos_sub1{
@@ -149,6 +156,20 @@
 
 #lista{
     position: absolute;
+    bottom: -10%;
+    right:38%;
+}
+
+#horarios{
     bottom: -8%;
-    right:50%;
+    right:82%;
+    position: absolute;
+    color: rgba(6, 6, 6, 0.83);
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+#boton_horarios{
+    color: rgba(6, 6, 6, 0.83);
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
 }
