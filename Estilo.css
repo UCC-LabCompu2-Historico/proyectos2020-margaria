@@ -27,35 +27,35 @@ body{
 #division1{
     background: #F4F1BB;
     width: 50%;
-    height:35vh;
+    height:38ch;
     float: left;
 }
 
 #division2{
     background: #eaf2e3;
     width: 50%;
-    height:35vh;
+    height:38ch;
     float:right;
 }
 
 #division3 {
     background: #66D7D1;
     width: 100%;
-    height:35vh;
+    height:42ch;
     float: left;
 }
 
 #division4{
     background: #eaf2e3;
     width: 65%;
-    height:30vh;
+    height:36ch;
     float: left;
 }
 
 #division5{
     background: #F4F1BB;
     width: 35%;
-    height:30vh;
+    height:36ch;
     float: right;
 }
 
