@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Estilo.css" type="text/css">
     <link rel="shortcut icon" href="Multimedia/Icono_Page/bacteria.png">
+    <script type="text/javascript" src="Java.js"></script>
 </head>
 <body>
 <header id="cabecera">
@@ -40,9 +41,9 @@
             </p>
         </div>
         <form id="pos_formulario" class="Tipo">
-            Altura (Mts): <input type="number" size="3" name="altura">
-            Peso (Kg): <input type="number" size="3" name="peso">
-            <button class="Tipo">Calcular IMC</button>
+            Altura (Mts): <input id="Alt" type="number" size="3" name="altura">
+            Peso (Kg): <input id="Pes" type="number" size="3" name="peso">
+            <button class="Tipo" onclick="calcularIMC()">Calcular IMC</button>
         </form>
     </div>
 </div>
