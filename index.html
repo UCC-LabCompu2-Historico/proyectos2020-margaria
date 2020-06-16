@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Estilo.css" type="text/css">
     <link rel="shortcut icon" href="Multimedia/Icono_Page/bacteria.png">
+    <script type="text/javascript" src="Java.js"></script>
 </head>
 <body>
 <header id="cabecera">
@@ -40,9 +41,9 @@
             </p>
         </div>
         <form id="pos_formulario" class="Tipo">
-            Altura (Mts): <input type="number" size="3" name="altura">
-            Peso (Kg): <input type="number" size="3" name="peso">
-            <button class="Tipo">Calcular IMC</button>
+            Altura (Mts): <input id="Alt" type="text" size="3" name="altura">
+            Peso (Kg): <input id="Pes" type="text" size="3" name="peso">
+            <button class="Tipo" onclick="calcularIMC()">Calcular IMC</button>
         </form>
     </div>
 </div>
@@ -94,9 +95,9 @@
     <div id="division4">
         <h2 class="Tipo" id="pos_imp">¿Porqué es tan importante dormir?</h2>
         <div  id="horarios">
-            Hora de Dormir:<input type="time" name="hora" step="1" class="horas">
-            Hora de Despertar:<input type="time" name="hora" step="1" class="horas">
-            <button id="boton_horarios">Calcular!</button>
+            Hora de Dormir(HH:MM):<input id="f1" type="text" name="hora" class="horas">
+            Hora de Despertar(HH:MM):<input id="f2" type="text" name="hora" class="horas">
+            <button id="boton_horarios" onclick="Horas()">Calcular!</button>
         </div>
         <div id="lista">
             <ul>
@@ -110,10 +111,11 @@
         </div>
     </div>
     <div id="division5">
-        <h2 class="Tipo">Canvas_Place (GRAFICO)</h2>
-        <canvas>
-
+        <h2 id="graf" class="Tipo" onclick="informativo()">Porcentaje de horas necesarias de sueño</h2>
+        <canvas id="myCanvas" class="Canvas">
+            Tu navegador no soporta el tag de HTML5 canvas.
         </canvas>
+        <button class="Tipo" onclick="informativo()">¿Que es?</button>
     </div>
 </div>
 </body>
