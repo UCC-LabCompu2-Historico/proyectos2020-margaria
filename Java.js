@@ -53,10 +53,10 @@ function Horas() {
                 horas++;
             }
             horas = horas - 1;
+            dibujarCuadriculado(horas,minutos);
             horas = horas.toString();
             minutos = minutos.toString();
             alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
-            dibujarCuadriculado(horas,minutos);
         }
         if (inicioHoras == finHoras) {
             if (inicioMinutos > finMinutos) {
@@ -69,17 +69,18 @@ function Horas() {
                     horas++;
                 }
                 horas = horas - 1;
+                dibujarCuadriculado(horas,minutos);
                 horas = horas.toString();
                 minutos = minutos.toString();
                 alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
-                dibujarCuadriculado(horas,minutos);
             }
             if (inicioMinutos < finMinutos) {
                 minutos = finMinutos - inicioMinutos;
-                alert("Has dormido" + minutos + " Minutos");
                 dibujarCuadriculado(0,minutos);
+                alert("Has dormido "+ minutos + " Minutos");
             }
             if (inicioMinutos == finMinutos) {
+                dibujarCuadriculado(horas,minutos);
                 alert("No has llegado a dormir 1 Minuto");
             }
         }
@@ -90,35 +91,52 @@ function Horas() {
                 minutos = minutos + 60;
                 horas--;
             }
+            dibujarCuadriculado(horas,minutos);
             horas = horas.toString();
             minutos = minutos.toString();
             alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
-            dibujarCuadriculado(horas,minutos);
+
         }
     }else{
         var msj="Ha ingresado un valor erroneo. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
         alert(msj);
+        document.getElementById("f1").value="";
+        document.getElementById("f2").value="";
     }
 }
 
-function dibujarCuadriculado(hs,mn) {
+function dibujarCuadriculado(horas,minutos) {
+    limpiarCanvas();
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
-    var anchoMax = canvas.width;
-    var alturaMax = canvas.height;
+    var minutosT=minutos+(horas*60);
+    var porciento=minutosT*100/480;
 
-    //Lineas Horizontales
     ctx.beginPath();
-    for(var i=0;i<alturaMax;) {
-        ctx.moveTo(0, i);
-        ctx.lineTo(anchoMax,i);
-        ctx.strokeStyle = "#000a42";
-        ctx.stroke();
-        i=i+20;
-    }
+    ctx.arc(150, 75, 70, 0, 2 * Math.PI);
+    ctx.strokeStyle = "#66d7d1";
+    ctx.stroke();
+    ctx.closePath()
+
+    var relleno=porciento*2/100
+
+    ctx.beginPath();
+    ctx.arc(150, 75, 70, 0, relleno*Math.PI);
+    ctx.strokeStyle = "#ff4161";
+    ctx.stroke();
+    ctx.font = "bold 22px sans-serif";
+    ctx.fillText(porciento+"%",120,79);
     ctx.closePath();
+}
 
+function informativo() {
+    alert("Este es un indicador que nos dice en porcentaje cuanto hemos dormido con respecto a las horas necesarias")
+}
 
+function limpiarCanvas(){
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
 
+    canvas.width = canvas.width;
 }
