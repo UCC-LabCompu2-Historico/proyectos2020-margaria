@@ -42,54 +42,55 @@ function Horas() {
     finMinutos = parseInt(fin.substr(3,2));
     finHoras = parseInt(fin.substr(0,2));
 
-    if(inicioHoras>finHoras){
-        var tempH=24-inicioHoras;
-        horas=finHoras+tempH;
-        var tempM=60-inicioMinutos;
-        minutos=finMinutos+tempM;
-        if(minutos>59){
-            minutos=minutos-60;
-            horas++;
-        }
-        horas = horas-1;
-        horas = horas.toString();
-        minutos = minutos.toString();
-        alert("Has dormido "+horas+" Horas y "+minutos+" Minutos");
-    }
-    if(inicioHoras==finHoras){
-        if(inicioMinutos>finMinutos){
-            var tempH=24-inicioHoras;
-            horas=finHoras+tempH;
-            var tempM=60-inicioMinutos;
-            minutos=finMinutos+tempM;
-            if(minutos>59){
-                minutos=minutos-60;
+    if((inicioMinutos>=0)&&(inicioMinutos<60)&&(inicioHoras<24)&&(inicioHoras>=0)&&(finMinutos>=0)&&(finMinutos<60)&&(finHoras<24)&&(finHoras>=0)){
+        if (inicioHoras > finHoras) {
+            var tempH = 24 - inicioHoras;
+            horas = finHoras + tempH;
+            var tempM = 60 - inicioMinutos;
+            minutos = finMinutos + tempM;
+            if (minutos > 59) {
+                minutos = minutos - 60;
                 horas++;
             }
-            horas = horas-1;
+            horas = horas - 1;
             horas = horas.toString();
             minutos = minutos.toString();
-            alert("Has dormido "+horas+" Horas y "+minutos+" Minutos");
+            alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
         }
-        if(inicioMinutos<finMinutos){
-            minutos=finMinutos-inicioMinutos;
-            alert("Has dormido"+minutos+" Minutos");
+        if (inicioHoras == finHoras) {
+            if (inicioMinutos > finMinutos) {
+                var tempH = 24 - inicioHoras;
+                horas = finHoras + tempH;
+                var tempM = 60 - inicioMinutos;
+                minutos = finMinutos + tempM;
+                if (minutos > 59) {
+                    minutos = minutos - 60;
+                    horas++;
+                }
+                horas = horas - 1;
+                horas = horas.toString();
+                minutos = minutos.toString();
+                alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
+            }
+            if (inicioMinutos < finMinutos) {
+                minutos = finMinutos - inicioMinutos;
+                alert("Has dormido" + minutos + " Minutos");
+            }
+            if (inicioMinutos == finMinutos) {
+                alert("No ha llegado a dormir 1 Minuto");
+            }
         }
-        if(inicioMinutos==finMinutos){
-            alert("No ha llegado a dormir 1 Minuto");
+        if (inicioHoras < finHoras) {
+            horas = finHoras - inicioHoras;
+            minutos = finMinutos - inicioMinutos;
+            if (minutos < 0) {
+                minutos = minutos + 60;
+                horas--;
+            }
+            horas = horas.toString();
+            minutos = minutos.toString();
+            alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
         }
     }
-    if(inicioHoras<finHoras){
-        horas=finHoras-inicioHoras;
-        minutos=finMinutos-inicioMinutos;
-        if(minutos<0){
-            minutos=minutos+60;
-            horas--;
-        }
-        horas = horas.toString();
-        minutos = minutos.toString();
-        alert("Has dormido "+horas+" Horas y "+minutos+" Minutos");
-    }
-
 }
 
