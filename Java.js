@@ -1,7 +1,13 @@
 /**
- * Created by Luciano on 6/5/2017.
+ * Created by Luciano on 16/06/2020.
  */
-
+/**
+ * Calculador de Indice de Masa Corporal
+ * @method calcularIMC
+ * @param {number} valor - El valor de la altura
+ * @param {number} valor - El valor del peso
+ * @return
+ */
 function calcularIMC() {
     var A,P,R;
 
@@ -31,7 +37,13 @@ function calcularIMC() {
     }
 
 }
-
+/**
+ * Calculador de Horas Transcurridas
+ * @method Horas
+ * @param {number} Inicio y Fin de las Horas
+ * @param {number} Inicio y Fin de los Minutos
+ * @return
+ */
 function Horas() {
     inicio = document.getElementById("f1").value;
     fin = document.getElementById("f2").value;
@@ -104,7 +116,13 @@ function Horas() {
         document.getElementById("f2").value="";
     }
 }
-
+/**
+ * Grafico
+ * @method dibujarCuadriculado
+ * @param {number} Horas - Horas Transcurridas
+ * @param {number} Minutos- Minutos Transcurridos
+ * @return
+ */
 function dibujarCuadriculado(horas,minutos) {
     limpiarCanvas();
     var canvas = document.getElementById("myCanvas");
@@ -130,10 +148,17 @@ function dibujarCuadriculado(horas,minutos) {
     ctx.closePath();
 }
 
+////// No es relevante - Bajo criterio propio
 function informativo() {
     alert("Este es un indicador que nos dice en porcentaje cuanto hemos dormido con respecto a las horas necesarias. Por ejemplo: Hemos dormido el 80% de las horas necesarias");
 }
+//////
 
+/**
+ * Limpidor de Grafico
+ * @method limpiarCanvas
+ * @return
+ */
 function limpiarCanvas(){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
