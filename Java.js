@@ -80,7 +80,7 @@ function Horas() {
                 alert("Has dormido "+ minutos + " Minutos");
             }
             if (inicioMinutos == finMinutos) {
-                dibujarCuadriculado(horas,minutos);
+                dibujarCuadriculado(0,0);
                 alert("No has llegado a dormir 1 Minuto");
             }
         }
@@ -119,19 +119,19 @@ function dibujarCuadriculado(horas,minutos) {
     ctx.stroke();
     ctx.closePath()
 
-    var relleno=porciento*2/100
+    var relleno=porciento*2/100;
 
     ctx.beginPath();
     ctx.arc(150, 75, 70, 0, relleno*Math.PI);
     ctx.strokeStyle = "#ff4161";
     ctx.stroke();
     ctx.font = "bold 22px sans-serif";
-    ctx.fillText(porciento+"%",120,79);
+    ctx.fillText(Math.round(porciento*100)/100+"%",120,79);
     ctx.closePath();
 }
 
 function informativo() {
-    alert("Este es un indicador que nos dice en porcentaje cuanto hemos dormido con respecto a las horas necesarias")
+    alert("Este es un indicador que nos dice en porcentaje cuanto hemos dormido con respecto a las horas necesarias. Por ejemplo: Hemos dormido el 80% de las horas necesarias");
 }
 
 function limpiarCanvas(){
