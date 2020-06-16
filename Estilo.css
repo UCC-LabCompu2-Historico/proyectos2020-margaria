@@ -110,9 +110,9 @@ body{
 }
 
 .horas{
-    padding: 15px;
+    padding: 7px;
     border: 2px dashed #ff637d ;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #Pos_sub1{
@@ -200,14 +200,15 @@ body{
     text-align: center;
     color: rgba(6, 6, 6, 0.83);
     font-family: 'Amatic SC', cursive;
-    font-size: 30px;
-    margin-left: 4%;
+    font-size: 21px;
+    margin-left: 9%;
     float: left;
-    width: 24%;
-    margin-top: 2%;
+    width: 14%;
+    margin-top: 1%;
 }
 #boton_horarios{
     color: rgba(6, 6, 6, 0.83);
     font-family: 'Amatic SC', cursive;
-    font-size: 30px;
+    font-size: 21px;
+    margin-top: 13px;
 }

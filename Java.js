@@ -8,6 +8,7 @@ function calcularIMC() {
     A=document.getElementById("Alt").value;
     P=document.getElementById("Pes").value;
 
+
     R=P/Math.pow(A,2);
 
     if(R<18){
@@ -24,3 +25,65 @@ function calcularIMC() {
     }
 
 }
+
+function Horas() {
+    inicio = document.getElementById("f1").value;
+    fin = document.getElementById("f2").value;
+
+    inicioMinutos = parseInt(inicio.substr(3,2));
+    inicioHoras = parseInt(inicio.substr(0,2));
+
+    finMinutos = parseInt(fin.substr(3,2));
+    finHoras = parseInt(fin.substr(0,2));
+
+    if(inicioHoras>finHoras){
+        var tempH=24-inicioHoras;
+        horas=finHoras+tempH;
+        var tempM=60-inicioMinutos;
+        minutos=finMinutos+tempM;
+        if(minutos>59){
+            minutos=minutos-60;
+            horas++;
+        }
+        horas = horas-1;
+        horas = horas.toString();
+        minutos = minutos.toString();
+        alert("Ha dormido "+horas+" Horas y "+minutos+" Minutos");//////////////////////////////////////////
+    }
+    if(inicioHoras==finHoras){
+        if(inicioMinutos>finMinutos){
+            var tempH=24-inicioHoras;
+            horas=finHoras+tempH;
+            var tempM=60-inicioMinutos;
+            minutos=finMinutos+tempM;
+            if(minutos>59){
+                minutos=minutos-60;
+                horas++;
+            }
+            horas = horas-1;
+            horas = horas.toString();
+            minutos = minutos.toString();
+            alert("Ha dormido "+horas+" Horas y "+minutos+" Minutos");//////////////////////////////////////////
+        }
+        if(inicioMinutos<finMinutos){
+            minutos=finMinutos-inicioMinutos;
+            alert("Ha dormido"+minutos+" Minutos");///////////////////////////////////////////////////
+        }
+        if(inicioMinutos==finMinutos){
+            alert("No ha llegado a dormir 1 Minuto");////////////////////////////////////////////////
+        }
+    }
+    if(inicioHoras<finHoras){
+        horas=finHoras-inicioHoras;
+        minutos=finMinutos-inicioMinutos;
+        if(minutos<0){
+            minutos=minutos+60;
+            horas--;
+        }
+        horas = horas.toString();
+        minutos = minutos.toString();
+        alert("Ha dormido "+horas+" Horas y "+minutos+" Minutos");////////////////////////////////////////
+    }
+
+}
+
