@@ -115,6 +115,14 @@ body{
     border-radius: 10px;
 }
 
+.Canvas{
+    width: 65%;
+    height: 68%;
+    border: 1px solid rgba(0, 0, 0, 0);
+    margin-left: 19%;
+    margin-top: 0%;
+}
+
 #Pos_sub1{
     margin-top: 6%;
     margin-left: 15%;
@@ -211,4 +219,8 @@ body{
     font-family: 'Amatic SC', cursive;
     font-size: 21px;
     margin-top: 12px;
+}
+
+#graf{
+    text-align: center;
 }

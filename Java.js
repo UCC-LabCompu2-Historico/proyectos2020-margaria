@@ -56,6 +56,7 @@ function Horas() {
             horas = horas.toString();
             minutos = minutos.toString();
             alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
+            dibujarCuadriculado(horas,minutos);
         }
         if (inicioHoras == finHoras) {
             if (inicioMinutos > finMinutos) {
@@ -71,13 +72,15 @@ function Horas() {
                 horas = horas.toString();
                 minutos = minutos.toString();
                 alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
+                dibujarCuadriculado(horas,minutos);
             }
             if (inicioMinutos < finMinutos) {
                 minutos = finMinutos - inicioMinutos;
                 alert("Has dormido" + minutos + " Minutos");
+                dibujarCuadriculado(0,minutos);
             }
             if (inicioMinutos == finMinutos) {
-                alert("No ha llegado a dormir 1 Minuto");
+                alert("No has llegado a dormir 1 Minuto");
             }
         }
         if (inicioHoras < finHoras) {
@@ -90,10 +93,32 @@ function Horas() {
             horas = horas.toString();
             minutos = minutos.toString();
             alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
+            dibujarCuadriculado(horas,minutos);
         }
     }else{
-        var msj="Ha ingresado el valor erroneamente. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
+        var msj="Ha ingresado un valor erroneo. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
         alert(msj);
     }
 }
 
+function dibujarCuadriculado(hs,mn) {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    var anchoMax = canvas.width;
+    var alturaMax = canvas.height;
+
+    //Lineas Horizontales
+    ctx.beginPath();
+    for(var i=0;i<alturaMax;) {
+        ctx.moveTo(0, i);
+        ctx.lineTo(anchoMax,i);
+        ctx.strokeStyle = "#000a42";
+        ctx.stroke();
+        i=i+20;
+    }
+    ctx.closePath();
+
+
+
+}
