@@ -8,6 +8,12 @@ function calcularIMC() {
     A=document.getElementById("Alt").value;
     P=document.getElementById("Pes").value;
 
+    if(A.includes(",")){
+        A=A.replace(",",".");
+    }
+    if(P.includes(",")){
+        P=P.replace(",",".");
+    }
 
     R=P/Math.pow(A,2);
 
@@ -48,7 +54,7 @@ function Horas() {
         horas = horas-1;
         horas = horas.toString();
         minutos = minutos.toString();
-        alert("Ha dormido "+horas+" Horas y "+minutos+" Minutos");//////////////////////////////////////////
+        alert("Has dormido "+horas+" Horas y "+minutos+" Minutos");
     }
     if(inicioHoras==finHoras){
         if(inicioMinutos>finMinutos){
@@ -63,14 +69,14 @@ function Horas() {
             horas = horas-1;
             horas = horas.toString();
             minutos = minutos.toString();
-            alert("Ha dormido "+horas+" Horas y "+minutos+" Minutos");//////////////////////////////////////////
+            alert("Has dormido "+horas+" Horas y "+minutos+" Minutos");
         }
         if(inicioMinutos<finMinutos){
             minutos=finMinutos-inicioMinutos;
-            alert("Ha dormido"+minutos+" Minutos");///////////////////////////////////////////////////
+            alert("Has dormido"+minutos+" Minutos");
         }
         if(inicioMinutos==finMinutos){
-            alert("No ha llegado a dormir 1 Minuto");////////////////////////////////////////////////
+            alert("No ha llegado a dormir 1 Minuto");
         }
     }
     if(inicioHoras<finHoras){
@@ -82,7 +88,7 @@ function Horas() {
         }
         horas = horas.toString();
         minutos = minutos.toString();
-        alert("Ha dormido "+horas+" Horas y "+minutos+" Minutos");////////////////////////////////////////
+        alert("Has dormido "+horas+" Horas y "+minutos+" Minutos");
     }
 
 }
