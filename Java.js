@@ -91,6 +91,9 @@ function Horas() {
             minutos = minutos.toString();
             alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
         }
+    }else{
+        var msj="Ha ingresado el valor erroneamente. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
+        alert(msj);
     }
 }
 
