@@ -54,24 +54,9 @@ function Horas() {
     finMinutos = parseInt(fin.substr(3,2));
     finHoras = parseInt(fin.substr(0,2));
 
-    if((inicioMinutos>=0)&&(inicioMinutos<60)&&(inicioHoras<24)&&(inicioHoras>=0)&&(finMinutos>=0)&&(finMinutos<60)&&(finHoras<24)&&(finHoras>=0)){
-        if (inicioHoras > finHoras) {
-            var tempH = 24 - inicioHoras;
-            horas = finHoras + tempH;
-            var tempM = 60 - inicioMinutos;
-            minutos = finMinutos + tempM;
-            if (minutos > 59) {
-                minutos = minutos - 60;
-                horas++;
-            }
-            horas = horas - 1;
-            dibujarCuadriculado(horas,minutos);
-            horas = horas.toString();
-            minutos = minutos.toString();
-            alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
-        }
-        if (inicioHoras == finHoras) {
-            if (inicioMinutos > finMinutos) {
+    if((inicioMinutos>=0)&&(inicioMinutos<60)&&(inicioHoras<24)&&(inicioHoras>=0)){
+        if((finMinutos>=0)&&(finMinutos<60)&&(finHoras<24)&&(finHoras>=0)){
+            if (inicioHoras > finHoras) {
                 var tempH = 24 - inicioHoras;
                 horas = finHoras + tempH;
                 var tempM = 60 - inicioMinutos;
@@ -86,34 +71,54 @@ function Horas() {
                 minutos = minutos.toString();
                 alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
             }
-            if (inicioMinutos < finMinutos) {
+            if (inicioHoras == finHoras) {
+                if (inicioMinutos > finMinutos) {
+                    var tempH = 24 - inicioHoras;
+                    horas = finHoras + tempH;
+                    var tempM = 60 - inicioMinutos;
+                    minutos = finMinutos + tempM;
+                    if (minutos > 59) {
+                        minutos = minutos - 60;
+                        horas++;
+                    }
+                    horas = horas - 1;
+                    dibujarCuadriculado(horas,minutos);
+                    horas = horas.toString();
+                    minutos = minutos.toString();
+                    alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
+                }
+                if (inicioMinutos < finMinutos) {
+                    minutos = finMinutos - inicioMinutos;
+                    dibujarCuadriculado(0,minutos);
+                    alert("Has dormido "+ minutos + " Minutos");
+                }
+                if (inicioMinutos == finMinutos) {
+                    dibujarCuadriculado(0,0);
+                    alert("No has llegado a dormir 1 Minuto");
+                }
+            }
+            if (inicioHoras < finHoras) {
+                horas = finHoras - inicioHoras;
                 minutos = finMinutos - inicioMinutos;
-                dibujarCuadriculado(0,minutos);
-                alert("Has dormido "+ minutos + " Minutos");
-            }
-            if (inicioMinutos == finMinutos) {
-                dibujarCuadriculado(0,0);
-                alert("No has llegado a dormir 1 Minuto");
-            }
-        }
-        if (inicioHoras < finHoras) {
-            horas = finHoras - inicioHoras;
-            minutos = finMinutos - inicioMinutos;
-            if (minutos < 0) {
-                minutos = minutos + 60;
-                horas--;
-            }
-            dibujarCuadriculado(horas,minutos);
-            horas = horas.toString();
-            minutos = minutos.toString();
-            alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
+                if (minutos < 0) {
+                    minutos = minutos + 60;
+                    horas--;
+                }
+                dibujarCuadriculado(horas,minutos);
+                horas = horas.toString();
+                minutos = minutos.toString();
+                alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
 
+            }
+        }else{
+            var msj="Ha ingresado un valor erróneo en el campo HORA DE DESPERTAR. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
+            alert(msj);
+            document.getElementById("f2").value="";
         }
     }else{
-        var msj="Ha ingresado un valor erroneo. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
+        var msj="Ha ingresado un valor erróneo en el campo HORA DE DORMIR. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
         alert(msj);
         document.getElementById("f1").value="";
-        document.getElementById("f2").value="";
     }
 }
 /**
