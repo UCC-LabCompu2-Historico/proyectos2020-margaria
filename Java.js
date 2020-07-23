@@ -39,12 +39,54 @@ function calcularIMC() {
 }
 /**
  * Calculador de Horas Transcurridas
- * @method Horas
+ * @method tiempo
  * @param {number} Inicio y Fin de las Horas
  * @param {number} Inicio y Fin de los Minutos
- * @return
+ * @return {number} Minutos Totales
  */
-function Horas() {
+function tiempo() {
+    inicio = document.getElementById("f1").value;
+    fin = document.getElementById("f2").value;
+
+    inicioMinutos = parseInt(inicio.substr(3,2));
+    inicioHoras = parseInt(inicio.substr(0,2));
+    BeginMinutos = inicioHoras*60+inicioMinutos;
+
+    finMinutos = parseInt(fin.substr(3,2));
+    finHoras = parseInt(fin.substr(0,2));
+    EndMinutos= finHoras*60+finMinutos;
+
+    if((inicioMinutos>=0)&&(inicioMinutos<60)&&(inicioHoras<24)&&(inicioHoras>=0)){
+        if((finMinutos>=0)&&(finMinutos<60)&&(finHoras<24)&&(finHoras>=0)) {
+            if (EndMinutos > BeginMinutos) Total = EndMinutos - BeginMinutos;
+            if (EndMinutos < BeginMinutos) Total = (1440 - BeginMinutos) + EndMinutos;
+            if (EndMinutos == BeginMinutos) Total = 0;
+            if (Total != 0) {
+                TotalH = Math.trunc(Total / 60);
+                TotalM = Math.round((Total / 60 - TotalH) * 60);
+                if (TotalH == 0) alert("Ha dormido " + TotalM + " Minutos");
+                if (TotalH != 0) alert("Ha dormido " + TotalH + " Horas y " + TotalM + " Minutos");
+            } else alert("No ha dormido ni 1 minuto");
+        }else{
+            var msj="Ha ingresado un valor erróneo en el campo HORA DE DESPERTAR. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
+            alert(msj);
+            document.getElementById("f2").value="";
+        }
+    }else{
+        if((finMinutos>=0)&&(finMinutos<60)&&(finHoras<24)&&(finHoras>=0)){
+            var msj="Ha ingresado un valor erróneo en el campo HORA DE DORMIR. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
+            alert(msj);
+            document.getElementById("f1").value="";
+        }else{
+            var msj="Ha ingresado un valor erróneo en Ambos campos. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
+            alert(msj);
+            document.getElementById("f2").value="";
+            document.getElementById("f1").value="";
+        }
+    }
+    return Total;
+}
+/*function Horas() {
     inicio = document.getElementById("f1").value;
     fin = document.getElementById("f2").value;
 
@@ -120,21 +162,22 @@ function Horas() {
         alert(msj);
         document.getElementById("f1").value="";
     }
-}
+}*/
 /**
  * Grafico
  * @method dibujarCuadriculado
- * @param {number} Horas - Horas Transcurridas
- * @param {number} Minutos- Minutos Transcurridos
+     * @param {number} MinutosT - Minutos Totales
  * @return
  */
-function dibujarCuadriculado(horas,minutos) {
+function dibujarCuadriculado(MinutosT) {
     limpiarCanvas();
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
-    var minutosT=minutos+(horas*60);
     var porciento=minutosT*100/480;
+
+    var conteo=suma+0;
+    var suma=conteo+1;
 
     ctx.beginPath();
     ctx.arc(150, 75, 70, 0, 2 * Math.PI);
@@ -144,13 +187,22 @@ function dibujarCuadriculado(horas,minutos) {
 
     var relleno=porciento*2/100;
 
-    ctx.beginPath();
+   /* ctx.beginPath();
     ctx.arc(150, 75, 70, 0, relleno*Math.PI);
     ctx.strokeStyle = "#ff4161";
     ctx.stroke();
     ctx.font = "bold 22px sans-serif";
     ctx.fillText(Math.round(porciento*100)/100+"%",120,79);
-    ctx.closePath();
+    ctx.closePath();*/
+
+        ctx.beginPath();
+        ctx.arc(150, 75, 70, 0, conteo*Math.PI);
+        ctx.strokeStyle = "#ff4161";
+        ctx.stroke();
+        ctx.font = "bold 22px sans-serif";
+        ctx.fillText(Math.round(porciento*100)/100+"%",120,79);
+        ctx.closePath();
+    setInterval(dibujarCuadriculado,15);
 }
 
 ////// No es relevante - Bajo criterio propio
