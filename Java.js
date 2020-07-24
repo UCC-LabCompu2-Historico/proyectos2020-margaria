@@ -79,16 +79,19 @@ function tiempo() {
         }else{
             var msj="Ha ingresado un valor erróneo en el campo HORA DE DESPERTAR. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
             alert(msj);
+            Total=0;
             document.getElementById("f2").value="";
         }
     }else{
         if((finMinutos>=0)&&(finMinutos<60)&&(finHoras<24)&&(finHoras>=0)){
             var msj="Ha ingresado un valor erróneo en el campo HORA DE DORMIR. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
             alert(msj);
+            Total=0;
             document.getElementById("f1").value="";
         }else{
             var msj="Ha ingresado un valor erróneo en Ambos campos. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
             alert(msj);
+            Total=0;
             document.getElementById("f2").value="";
             document.getElementById("f1").value="";
         }
