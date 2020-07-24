@@ -107,6 +107,8 @@ function Grafico(minutosT) {
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
 
+        porcientoG=Math.round(Grafico.grados*100)/100;
+
         if(Grafico.grados>relleno){
             clearInterval(stop);
         }else{
@@ -115,17 +117,25 @@ function Grafico(minutosT) {
             limpiarCanvas();
             ctx.beginPath();
             ctx.arc(150, 75, 70, 0, 2 * Math.PI);
+            ctx.lineWidth = 7;
+            ctx.lineCap = 'round';
             ctx.strokeStyle = "#66d7d1";
+            ctx.shadowBlur = 7;
+            ctx.shadowColor = '#66d7d1';
             ctx.stroke();
             ctx.closePath()
 
             ctx.beginPath();
             ctx.arc(150, 75, 70, 0, degree(Grafico.grados));
+            ctx.lineWidth = 7;
+            ctx.lineCap = 'round';
             ctx.strokeStyle = "#ff4161";
+            ctx.shadowBlur = 7;
+            ctx.shadowColor = '#ff4161';
             ctx.stroke();
             ctx.font = "bold 22px sans-serif";
             //ctx.fillText(Math.round(porciento*100)/100+"%",120,79);
-            ctx.fillText(Math.round(Grafico.grados*100)/100+" "+relleno,120,79);
+            ctx.fillText(Math.round(porcientoG*100/2)+"%",130,79);
             ctx.closePath();
     }
 }
