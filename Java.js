@@ -86,123 +86,48 @@ function tiempo() {
     }
     return Total;
 }
-/*function Horas() {
-    inicio = document.getElementById("f1").value;
-    fin = document.getElementById("f2").value;
 
-    inicioMinutos = parseInt(inicio.substr(3,2));
-    inicioHoras = parseInt(inicio.substr(0,2));
-
-    finMinutos = parseInt(fin.substr(3,2));
-    finHoras = parseInt(fin.substr(0,2));
-
-    if((inicioMinutos>=0)&&(inicioMinutos<60)&&(inicioHoras<24)&&(inicioHoras>=0)){
-        if((finMinutos>=0)&&(finMinutos<60)&&(finHoras<24)&&(finHoras>=0)){
-            if (inicioHoras > finHoras) {
-                var tempH = 24 - inicioHoras;
-                horas = finHoras + tempH;
-                var tempM = 60 - inicioMinutos;
-                minutos = finMinutos + tempM;
-                if (minutos > 59) {
-                    minutos = minutos - 60;
-                    horas++;
-                }
-                horas = horas - 1;
-                dibujarCuadriculado(horas,minutos);
-                horas = horas.toString();
-                minutos = minutos.toString();
-                alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
-            }
-            if (inicioHoras == finHoras) {
-                if (inicioMinutos > finMinutos) {
-                    var tempH = 24 - inicioHoras;
-                    horas = finHoras + tempH;
-                    var tempM = 60 - inicioMinutos;
-                    minutos = finMinutos + tempM;
-                    if (minutos > 59) {
-                        minutos = minutos - 60;
-                        horas++;
-                    }
-                    horas = horas - 1;
-                    dibujarCuadriculado(horas,minutos);
-                    horas = horas.toString();
-                    minutos = minutos.toString();
-                    alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
-                }
-                if (inicioMinutos < finMinutos) {
-                    minutos = finMinutos - inicioMinutos;
-                    dibujarCuadriculado(0,minutos);
-                    alert("Has dormido "+ minutos + " Minutos");
-                }
-                if (inicioMinutos == finMinutos) {
-                    dibujarCuadriculado(0,0);
-                    alert("No has llegado a dormir 1 Minuto");
-                }
-            }
-            if (inicioHoras < finHoras) {
-                horas = finHoras - inicioHoras;
-                minutos = finMinutos - inicioMinutos;
-                if (minutos < 0) {
-                    minutos = minutos + 60;
-                    horas--;
-                }
-                dibujarCuadriculado(horas,minutos);
-                horas = horas.toString();
-                minutos = minutos.toString();
-                alert("Has dormido " + horas + " Horas y " + minutos + " Minutos");
-
-            }
-        }else{
-            var msj="Ha ingresado un valor erróneo en el campo HORA DE DESPERTAR. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
-            alert(msj);
-            document.getElementById("f2").value="";
-        }
-    }else{
-        var msj="Ha ingresado un valor erróneo en el campo HORA DE DORMIR. Asegurese de estar usando el horario en un formato de 24hs. Ejemplo: 22:15 (Diez y Cuarto)";
-        alert(msj);
-        document.getElementById("f1").value="";
-    }
-}*/
 /**
  * Grafico
  * @method dibujarCuadriculado
-     * @param {number} MinutosT - Minutos Totales
+ * @param {number} MinutosT - Minutos Totales
  * @return
  */
-function dibujarCuadriculado(MinutosT) {
-    limpiarCanvas();
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
 
-    var porciento=minutosT*100/480;
+function Grafico(minutosT) {
 
-    var conteo=suma+0;
-    var suma=conteo+1;
+    var stop = setInterval(animar,10);
 
-    ctx.beginPath();
-    ctx.arc(150, 75, 70, 0, 2 * Math.PI);
-    ctx.strokeStyle = "#66d7d1";
-    ctx.stroke();
-    ctx.closePath()
+    Grafico.grados=0;
+    dr=0.01;
+    porciento=minutosT*100/480;
+    relleno=porciento*2/100;
 
-    var relleno=porciento*2/100;
+    function animar(){
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
 
-   /* ctx.beginPath();
-    ctx.arc(150, 75, 70, 0, relleno*Math.PI);
-    ctx.strokeStyle = "#ff4161";
-    ctx.stroke();
-    ctx.font = "bold 22px sans-serif";
-    ctx.fillText(Math.round(porciento*100)/100+"%",120,79);
-    ctx.closePath();*/
+        if(Grafico.grados>relleno){
+            clearInterval(stop);
+        }else{
+            Grafico.grados+=dr;
+        }
+            limpiarCanvas();
+            ctx.beginPath();
+            ctx.arc(150, 75, 70, 0, 2 * Math.PI);
+            ctx.strokeStyle = "#66d7d1";
+            ctx.stroke();
+            ctx.closePath()
 
-        ctx.beginPath();
-        ctx.arc(150, 75, 70, 0, conteo*Math.PI);
-        ctx.strokeStyle = "#ff4161";
-        ctx.stroke();
-        ctx.font = "bold 22px sans-serif";
-        ctx.fillText(Math.round(porciento*100)/100+"%",120,79);
-        ctx.closePath();
-    setInterval(dibujarCuadriculado,15);
+            ctx.beginPath();
+            ctx.arc(150, 75, 70, 0, degree(Grafico.grados));
+            ctx.strokeStyle = "#ff4161";
+            ctx.stroke();
+            ctx.font = "bold 22px sans-serif";
+            //ctx.fillText(Math.round(porciento*100)/100+"%",120,79);
+            ctx.fillText(Math.round(Grafico.grados*100)/100+" "+relleno,120,79);
+            ctx.closePath();
+    }
 }
 
 ////// No es relevante - Bajo criterio propio
@@ -221,4 +146,9 @@ function limpiarCanvas(){
     var ctx = canvas.getContext("2d");
 
     canvas.width = canvas.width;
+}
+
+function degree(info) {
+    num=info*Math.PI;
+    return num;
 }
