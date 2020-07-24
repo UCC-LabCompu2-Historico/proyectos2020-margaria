@@ -14,6 +14,13 @@ function calcularIMC() {
     A=document.getElementById("Alt").value;
     P=document.getElementById("Pes").value;
 
+    if(A.includes(",")){
+        A=A.replace(",",".");
+    }
+    if(P.includes(",")){
+        P=P.replace(",",".");
+    }
+
     if(isNaN(A)){
         alert("Ha introducido un valor INCORRECTO en la Altura. Aseguresé que esté en el siguiente formato: 1.8 (1,8 Metros de Altura)");
         document.getElementById("Alt").value="";
@@ -21,13 +28,6 @@ function calcularIMC() {
     if(isNaN(P)){
         alert("Ha introducido un valor INCORRECTO en el Peso. Aseguresé que esté en el siguiente formato: 70 (70 Kilogramos de Peso)");
         document.getElementById("Alt").value="";
-    }
-
-    if(A.includes(",")){
-        A=A.replace(",",".");
-    }
-    if(P.includes(",")){
-        P=P.replace(",",".");
     }
 
     R=P/Math.pow(A,2);
