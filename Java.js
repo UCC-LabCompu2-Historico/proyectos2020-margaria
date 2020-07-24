@@ -14,6 +14,15 @@ function calcularIMC() {
     A=document.getElementById("Alt").value;
     P=document.getElementById("Pes").value;
 
+    if(isNaN(A)){
+        alert("Ha introducido un valor INCORRECTO en la Altura. Aseguresé que esté en el siguiente formato: 1.8 (1,8 Metros de Altura)");
+        document.getElementById("Alt").value="";
+    }
+    if(isNaN(P)){
+        alert("Ha introducido un valor INCORRECTO en el Peso. Aseguresé que esté en el siguiente formato: 70 (70 Kilogramos de Peso)");
+        document.getElementById("Alt").value="";
+    }
+
     if(A.includes(",")){
         A=A.replace(",",".");
     }
@@ -134,7 +143,6 @@ function Grafico(minutosT) {
             ctx.shadowColor = '#ff4161';
             ctx.stroke();
             ctx.font = "bold 22px sans-serif";
-            //ctx.fillText(Math.round(porciento*100)/100+"%",120,79);
             ctx.fillText(Math.round(porcientoG*100/2)+"%",130,79);
             ctx.closePath();
     }
@@ -158,6 +166,12 @@ function limpiarCanvas(){
     canvas.width = canvas.width;
 }
 
+/**
+ * Calculador de pi Radianes
+ * @method Degree
+ * @param {number} info - número sin estar en radianes
+ * @return {number} num - numero en pi radianes
+ */
 function degree(info) {
     num=info*Math.PI;
     return num;
